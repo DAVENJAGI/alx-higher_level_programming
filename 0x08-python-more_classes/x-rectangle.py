@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-""" Create a class called Rectangle"""
+"""Create class Rectangle"""
 
 
 class Rectangle:
-    """Initializes he rectangle"""
-    def __init__(self, width=0, height=0):
-        """ arguments:
-                    width (int): The width of the new rectangle.
-            height (int): The height of the new rectangle.
-        """
+    number_of_instances = 0
+    print_symb = "#"
 
+    def __init__(self, width=0, height=0):
+        """initialize"""
+        type(self).number_of_instances += 1
         self.width = width
         self.height = height
 
@@ -57,10 +56,18 @@ class Rectangle:
 
         string = []
         for i in range(self.__height):
-            [string.append('#') for j in range(self.__width)]
+            [string.append(str(self.print_symb)) for j in range(self.__width)]
             if i != self.__height - 1:
                 string.append("\n")
         return ("".join(string))
 
+    def __repr__(self):
+        """string representation of rectangle"""
+        string = "Rectangle(" + str(self.__width)
+        string += ", " + str(self.__height) + ")"
+        return (string)
+
     def __del__(self):
+        """Print message for deletion of rectangle"""
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
