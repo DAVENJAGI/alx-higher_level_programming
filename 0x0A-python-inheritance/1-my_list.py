@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Class called MyList"""
 
+
 class MyList(list):
 
     """Defines public attribute sorted"""
