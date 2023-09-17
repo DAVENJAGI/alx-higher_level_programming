@@ -1,32 +1,36 @@
-The ""0-add_integer"" module
+Using of the 0-add_integer.py
 ============================
+Using the ''add_integer''
 """
-this is the ''add_int'' module
+
+this is the ''add_int'' module for the function ''add_integer()''.
 
 It contains function for adding two numbers
+
 """
-Import "add_integer" from "0-add_integer.py" module:
+Import "add_integer" from "0-add_integer.py" module
 
-	>>> add_int = __import__('0-add_integer').add_integer
-Test it
+	>>> add_int = __import__("0-add_integer").add_integer
 
-	>>> add_int(none)
-	Traceback (most recent call):
+use it
+
+	>>> add_int(None)
+	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 
 	>>> add_int("hi")
-	Traceback (most recent call):
+	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 
 	>>> add_int(2, 'x')
-	Traceback (most recent call):
+	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
 
 	>>> add_int(5)
-	93
+	103
 
 	>>> add_int(70, -5)
 	65
@@ -37,26 +41,21 @@ Test it
 	>>> add_int(2, -10)
 	-8
 
-	>>> add_int(2.5, 7.8)
-	10
+	>>> add_int(2.1, 7.0)
+	9
 
 	>>> add_int(5050, 2.5)
 	5052
 
-	>>> add(10.0, 1.0)
+	>>> add_int(10.0, 1.0)
 	11
 
-	>>> add_int(float('xy')
-	Traceback (most recent call):
+	>>> add_int(float('xy'))
+	Traceback (most recent call last):
 	...
-	ValueError: cannot convert float xy to int
+	ValueError: could not convert string to float: 'xy'
 
 	>>> add_int(1000e100000)
-	Traceback (most recent call):
+	Traceback (most recent call last):
 	...
-	OverfloError: cannot convert float infinity to integer
-
-	>>> add_int("Hi", "There")
-	Traceback (most recent call):
-	...
-	ValueError: a must be an integer
+	OverflowError: cannot convert float infinity to integer
