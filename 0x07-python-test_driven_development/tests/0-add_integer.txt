@@ -1,0 +1,62 @@
+The ""0-add_integer"" module
+============================
+"""
+this is the ''add_int'' module
+
+It contains function for adding two numbers
+"""
+Import "add_integer" from "0-add_integer.py" module:
+
+	>>> add_int = __import__('0-add_integer').add_integer
+Test it
+
+	>>> add_int(none)
+	Traceback (most recent call):
+	...
+	TypeError: a must be an integer
+
+	>>> add_int("hi")
+	Traceback (most recent call):
+	...
+	TypeError: a must be an integer
+
+	>>> add_int(2, 'x')
+	Traceback (most recent call):
+	...
+	TypeError: b must be an integer
+
+	>>> add_int(5)
+	93
+
+	>>> add_int(70, -5)
+	65
+
+	>>> add_int(-60, -5)
+	-65
+
+	>>> add_int(2, -10)
+	-8
+
+	>>> add_int(2.5, 7.8)
+	10
+
+	>>> add_int(5050, 2.5)
+	5052
+
+	>>> add(10.0, 1.0)
+	11
+
+	>>> add_int(float('xy')
+	Traceback (most recent call):
+	...
+	ValueError: cannot convert float xy to int
+
+	>>> add_int(1000e100000)
+	Traceback (most recent call):
+	...
+	OverfloError: cannot convert float infinity to integer
+
+	>>> add_int("Hi", "There")
+	Traceback (most recent call):
+	...
+	ValueError: a must be an integer
