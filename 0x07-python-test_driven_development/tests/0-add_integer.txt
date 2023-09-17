@@ -47,3 +47,4 @@ use it
 	Traceback (most recent call last):
 	...
 	OverflowError: cannot convert float infinity to integer
+
