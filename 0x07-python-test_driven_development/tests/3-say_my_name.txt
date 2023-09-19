@@ -1,0 +1,35 @@
+Doctest to test the 3-say_my_name.py file
+==========================================
+Using the ''say_my_name''
+"""
+this is the say_my_name module for function say_my_name()
+
+contains function for printing out name
+
+"""
+import ''say_my_name'' from "3-say_my_name.py" module
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+use it
+	>>> say_my_name("Dave", "Njagi")
+	My name is Dave Njagi
+
+	>>> say_my_name("")
+	Traceback (most recent call last):
+	...
+	ValueError: first name required
+
+	>>> say_my_name(123)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(Walter, White)
+	Traceback (most recent call last):
+	...
+	NameError: name 'Walter' is not defined
+
+	>>> say_my_name("Elvis", Njagi)
+	Traceback (most recent call last):
+	...
+	NameError: name 'Njagi' is not defined
