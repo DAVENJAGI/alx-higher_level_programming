@@ -1,0 +1,28 @@
+Testmodule for 4-print_square.py.
+====================================
+we use the ''print_square''
+------------------------------------
+"""
+THis is the ''print_square'' module for ''print_square()''.
+Contains a function that prints a square.
+
+"""
+	>>> print_square = __import__("4-print_square").print_square
+
+use it.
+	>>> print_square(5)
+	#####
+	#####
+	#####
+	#####
+	#####
+
+	>>> print_square("hi")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	>>> print_square(-2)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
