@@ -8,9 +8,10 @@
 
 def add_integer(a, b=98):
     """
-    adds two integers
+    adds two integers.
+    Args: a, b
+    raise TypeError: arguments must be integers
     """
-
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     elif not isinstance(b, (int, float)):
