@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-    program to print #.
+"""program to print #.
 """
 
 
