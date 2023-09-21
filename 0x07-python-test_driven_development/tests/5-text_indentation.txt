@@ -1,0 +1,28 @@
+The testmodule for ""5-text_indentation.py"".
+=================================================
+We use the ''text_indent'' function.
+-------------------------------------------------
+"""
+ The function indents the text when it meets the characters ''.? and :''
+"""
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+use it
+
+	>>> text_indentation(9)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	>>> text_indentation("Holberton School")
+	Holberton School
+	
+	>>> text_indentation("Holberton:School")
+	Holberton:
+	<BLANKLINE>	
+	School
+
+	>>> text_indentation("Dave.Njagi")
+	Dave.
+	<BLANKLINE>
+	Njagi
