@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """defines a function
-
-    Function takes two integers and adds them
-
+   Function takes two integers and adds them
 """
 
 
@@ -12,6 +10,7 @@ def add_integer(a, b=98):
     Args: a, b
     raise TypeError: arguments must be integers
     """
+
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
     elif not isinstance(b, (int, float)):
