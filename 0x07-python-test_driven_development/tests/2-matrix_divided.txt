@@ -1,0 +1,35 @@
+Doctest for matrix division.
+============================
+
+Module provides a function to divide a marix
+Usage
+=====
+use function ''matrix'' imported from ""2-matrix_divided"".
+
+	>>> matrix = __import__('2-matrix_divided').matrix_divided
+
+use it:
+
+	>>> matrix(['Check1', 'check2'], 10)
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+	>>> matrix([[10, 'two'], ['one', 'two']], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+	>>> matrix([[10, 25], [50, 'seventy']], 5)
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+	>>> matrix([[20, 30, 40], [35, 10, 8]], 7)
+	[[2.86, 4.29, 5.71], [5.0, 1.43, 1.14]]
+
+	>>> matrix([[10, 5, 20], [15, 10, 25]], 5)
+	[[2.0, 1.0, 4.0], [3.0, 2.0, 5.0]]
+
+	>>> matrix([[]], 2)
+	[[]]
