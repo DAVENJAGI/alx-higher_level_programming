@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """defines a function
-   Function takes two integers and adds them
+
+    
+    Function takes two integers and adds them
 """
 
 
