@@ -14,12 +14,12 @@ class Base:
 		else:
 			Base.__nb_object += 1
 			self.id = Base.__nb_objects
-	
+
 	@staticmethod
 	def to_json_string(list_dictionaries):
 		"""return json dictionary lists"""
 		if list_dictionaries is None or list_dictionaries == []:
-	            return "[]"
+	        return "[]"
 	        return json.dumps(list_dictionaries)
 
 	@classmethod
