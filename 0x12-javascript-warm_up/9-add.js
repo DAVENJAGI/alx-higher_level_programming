@@ -1,5 +1,6 @@
 #!/usr/bin/node
 
+// Addition pf two command line arguments
 function add (a, b) {
   if (typeof a !== 'number') {
     a = parseInt(a);
