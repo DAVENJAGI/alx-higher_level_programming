@@ -1,6 +1,5 @@
 #!/usr/bin/node
 
-// Addition pf two command line arguments
 function add (a, b) {
   if (typeof a !== 'number') {
     a = parseInt(a);
@@ -11,4 +10,4 @@ function add (a, b) {
   return a + b;
 }
 
-console.log(add(process.argv[2], process.argv[3])); 
+console.log(add(process.argv[2], process.argv[3]));
