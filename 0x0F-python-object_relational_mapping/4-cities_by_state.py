@@ -22,5 +22,5 @@ if __name__ == "__main__":
         for record in rows:
             print(record)
 
-    cur.close()
-    db.close()
+#    cur.close()
+#    db.close()
