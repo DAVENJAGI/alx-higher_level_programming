@@ -9,10 +9,10 @@ import sys
 from sqlalchemy import sessionmaker
 
 if __name__ == "__main__":
-    engine = create_engine("sqlite:///{sys.argv[1]}:{sys.argv[1]}@localhost:3306/{sys.argv[3]}")
+    engine = create_engine(f"mysql://{sys.argv[1]}:{sys.argv[1]}@localhost:3306/{sys.argv[3]}")
 
     Session = sessionmaker(bind=engine)
-    session = Session
+    session = Session()
 
     states = session.query(State).order_by(state.id.asc()).all()
 
