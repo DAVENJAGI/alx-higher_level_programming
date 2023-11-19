@@ -6,15 +6,15 @@ Lists all cities from database hbtni_0e_o_usa
 import MySQLdb
 import sys
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="127.0.0.1", user=sys.argv[1],
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY id ASC")
+    cur.execute("SELECT 'c'.'id', 'c'.'name', 's'.'name' \
+                FROM 'cities' as 'c' \
+                ON 'c'.'state_id' = 's'.'id' \
+                ORDER BY 'c'.'id'")
 
-    rows = cur.fetchall()
-
-    for record in rows:
-        print(record)
+    [print(city) for city in c.fetchall()]
 
     cur.close()
     db.close()
