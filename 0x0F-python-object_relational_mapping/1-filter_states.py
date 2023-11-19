@@ -16,5 +16,5 @@ if __name__ == "__main__":
 
     rows = cur.fetchall()
 
-    for record in rows:
-        print(record)
+    for row in rows:
+        print(row)
