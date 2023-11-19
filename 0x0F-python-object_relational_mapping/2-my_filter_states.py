@@ -8,15 +8,14 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    db = db.connect(host="localhost", port=3306,
-                    user=argv[1], passwd=argv[2], db=argv[3])
+    dbm = db.connect(host="localhost", port=3306,
+                     user=argv[1], passwd=argv[2], db=argv[3])
+    cur = dbm.cursor()
 
-    db_cursor = db_connect.cursor()
+    dbm.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
+                        states.id ASC".format(argv[4]))
+    rows = dbm.fetchall()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
-            staties.id ASC".format(argv[4]))
-
-    rows = cur.fetchall()
-
-    for row in row:
+    for row in rows:
         print(row)
