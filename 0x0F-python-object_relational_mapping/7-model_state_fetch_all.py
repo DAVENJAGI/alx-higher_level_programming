@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 Ascript that lists all State objects from the database hbtn_0e_6_usa
+takes 3 arguments: mysql username, mysql password and database name
+script should connect to a MySQL server on localhost at port 3306
 """
 
 from sqlalchemy import create_engine
