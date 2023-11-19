@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""Script to list all states with name starting with uppercase N"""
+"""
+Script to list all states with name starting with uppercase N
+from database.
+"""
 
-import MySQLdb
-import sys
+from MySQLdb import mysql
+from sys import argv
 
 if __name__ == "__main__":
     db = MySQLdb.connect(host="127.0.0.1", user=sys.argv[1],
@@ -10,11 +13,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDERD BY id ASC")
-
     rows = cur.fetchall()
-
     for record in rows:
         print(record)
-
     cur.close()
     db.close()
