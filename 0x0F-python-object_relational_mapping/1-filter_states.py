@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Script to list states name starting with
-N (upper N) from hbtn_0e_0_usa
+N (upper N) from database btn_0e_0_usa table states.
 """
 
 import MySQLdb

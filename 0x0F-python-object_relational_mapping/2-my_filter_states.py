@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all states from database hbtni_0e_o_usa where name matches argument
+script that Lists all states from database hbtni_0e_o_usa table states
+where name matches argument
 """
 import MySQLdb
 import sys
