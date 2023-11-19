@@ -2,9 +2,7 @@
 
 """
 script that Lists all states from database hbtni_0e_o_usa table states
-where name matches argument
-Results must be sorted in ascending order by states.id
-Results must be displayed as they are in the example below
+where name matches argument Results must be sorted in ascending order.
 """
 import MySQLdb
 import sys
@@ -15,9 +13,9 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
             id ASC".format(sys.argv[4]))
-    
+
     rows = cur.fetchall()
-    
+
     for record in rows:
         print(record)
 
