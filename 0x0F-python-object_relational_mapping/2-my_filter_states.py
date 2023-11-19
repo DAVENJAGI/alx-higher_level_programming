@@ -2,6 +2,8 @@
 """
 script that Lists all states from database hbtni_0e_o_usa table states
 where name matches argument
+Results must be sorted in ascending order by states.id
+Results must be displayed as they are in the example below
 """
 import MySQLdb
 import sys
