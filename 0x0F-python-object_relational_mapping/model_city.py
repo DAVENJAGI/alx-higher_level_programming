@@ -15,7 +15,7 @@ Base = declarative_base()
 
 class City(Base):
     """class base description"""
-    __tablename__ = "states"
+    __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, auto_increment=True, nullable=False)
     name = Column(String(128), nullable=False)
