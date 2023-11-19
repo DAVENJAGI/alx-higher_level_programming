@@ -3,7 +3,7 @@
 script that Lists all states from database hbtni_0e_o_usa table states
 where name matches argument Results must be sorted in ascending order.
 """
-import MySQLdb as db
+import MySQLdb
 import sys
 
 if __name__ == "__main__":
@@ -11,7 +11,7 @@ if __name__ == "__main__":
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE '{}'"
+    cur.execute("SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC"
                 .format(sys.argv[4]))
 
     rows = cur.fetchall()
