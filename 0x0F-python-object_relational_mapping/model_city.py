@@ -21,10 +21,3 @@ class City(Base):
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey("state.id"), nullable=False)
 
-    def __repr__(self):
-        """To define how  to print the outpus"""
-        return f"State(id={self.id}, name={self.name})"
-
-
-engine = create_engine("sqlite:///user:root@localhost:3306")
-Base.metadata.create_all(engine)
