@@ -14,8 +14,11 @@ if __name__ == "__main__":
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
             id ASC".format(sys.argv[4]))
+    
     rows = cur.fetchall()
+    
     for record in rows:
-        print(record)
+        if record[1] == sys.argv[4]:
+            print(record)
     cur.close()
     db.close()
