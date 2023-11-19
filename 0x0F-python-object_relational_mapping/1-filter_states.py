@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Script to list states name starting with uppercase N.
-"""
+"""Script to list states name starting with uppercase N."""
 
 import MySQLdb
 import sys
