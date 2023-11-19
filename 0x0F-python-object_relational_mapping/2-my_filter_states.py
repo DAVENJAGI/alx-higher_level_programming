@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Lists all states from database hbtni_0e_o_usa
+Lists all states from database hbtni_0e_o_usa where name matches argument
 """
 
 import MySQLdb
@@ -9,12 +9,12 @@ if __name__ == "__main__":
     db = MySQLdb.connect(
             host="localhost", user=sys.argv[1],
             passwd=sys.argv[2], db=sys.argv[3],
-            state_name=sys.argv[4], port=3306
+            port=3306
             )
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE '{:s}'
-                ORDER BY id ASC".format(state_name))
+                ORDER BY id ASC".format(sys.argv[4]))
 
     rows = cur.fetchall()
 
