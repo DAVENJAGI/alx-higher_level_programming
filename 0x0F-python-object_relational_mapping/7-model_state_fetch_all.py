@@ -9,12 +9,15 @@ from model_state import Base, State
 import sys
 from sqlalchemy import sessionmaker
 
-Base = declarative_base()
-engine = create_engine("sqlite:///user:{sys.argv[1]}@localhost:3306")
+if __name__ == "__main__":
+    engine = create_engine("sqlite:///user:{sys.argv[1]}@localhost:3306")
+    
+    Session = sessionmaker(bind=engine)
+    session = Session
 
-states = session.query(State).order_by(state.id.asc()).all()
+    states = session.query(State).order_by(state.id.asc()).all()
 
-for state in states:
-    print(state)
+    for state in states:
+        print(state)
 
     session.close()
