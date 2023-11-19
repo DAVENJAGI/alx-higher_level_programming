@@ -4,7 +4,7 @@
 script that Lists all states from database hbtni_0e_o_usa table states
 where name matches argument Results must be sorted in ascending order.
 """
-import MySQLdb
+import MySQLdb as db
 import sys
 
 if __name__ == "__main__":
@@ -12,7 +12,7 @@ if __name__ == "__main__":
                      user=argv[1], passwd=argv[2], db=argv[3])
     cur = dbm.cursor()
 
-    dbm.execute(
+    cur.execute(
         "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY \
                         states.id ASC".format(argv[4]))
     rows = dbm.fetchall()
