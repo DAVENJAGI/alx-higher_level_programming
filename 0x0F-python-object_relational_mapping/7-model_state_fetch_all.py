@@ -8,10 +8,10 @@ script should connect to a MySQL server on localhost at port 3306
 from sqlalchemy import create_engine
 from model_state import Base, State
 import sys
-from sqlalchemy import sessionmaker
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    engine = create_engine(f"mysql://{sys.argv[1]}:{sys.argv[1]}@localhost:3306/{sys.argv[3]}")
+    engine = create_engine(f"mysql://{}:{}@localhost:3306/{}".format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
     session = Session()
