@@ -5,7 +5,7 @@ and an instance Base = declarative_base()
 """
 
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import declarative_base, relationships
 from sqlalchemy import create_engine
 from model_state import Base
@@ -19,7 +19,7 @@ class City(Base):
 
     id = Column(Integer, primary_key=True, auto_increment=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, nullable=False, ForeignKey("state.id"))
+    state_id = Column(Integer, ForeignKey("state.id"), nullable=False)
 
     def __repr__(self):
         """To define how  to print the outpus"""
