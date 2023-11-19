@@ -9,9 +9,7 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", user=sys.argv[1],
                          passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cur = db.cursor()
-    cur.execute("""
-                SELECT * FROM state.cities ORDER BY cities.id ASC
-                """)
+    cur.execute("SELECT * FROM state.cities ORDER BY cities.id ASC")
 
     rows = cur.fetchall()
 
@@ -19,5 +17,5 @@ if __name__ == "__main__":
         for record in rows:
             print(record)
 
-#    cur.close()
-#    db.close()
+    cur.close()
+    db.close()
