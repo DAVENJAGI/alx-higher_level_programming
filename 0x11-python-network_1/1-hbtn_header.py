@@ -11,5 +11,5 @@ if __name__ == "__main__":
     import sys
 
     with urllib.request.urlopen(sys.argv[1]) as hbtn:
-        content = hbtn.read()
-        print(content)
+        content = hbtn.info()
+        print(content.get('X-Request-Id'))
