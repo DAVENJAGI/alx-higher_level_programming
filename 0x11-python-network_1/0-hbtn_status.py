@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""fetches http:??alx-intranet.hbtn.io"""
+"""
+fetches http://alx-intranet.hbtn.io
+ must use packageurllib
+"""
+
 
 if __name__ == "__main":
     import urllib.request
