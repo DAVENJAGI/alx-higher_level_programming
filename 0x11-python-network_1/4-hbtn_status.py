@@ -8,7 +8,7 @@ fetches http://alx-intranet.hbtn.io
 if __name__ == "__main__":
     import requests
 
-    hbtn =  requests.get('https://alx-intranet.hbtn.io/status')
+    hbtn = requests.get('https://alx-intranet.hbtn.io/status')
     cont = hbtn.text
     print("Body response:")
     print("\t- type: {}".format(type(cont)))
