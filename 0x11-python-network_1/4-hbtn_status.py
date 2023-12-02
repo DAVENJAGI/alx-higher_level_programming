@@ -12,5 +12,5 @@ if __name__ == "__main__":
         cont = hbtn.text
         print("Body response:")
         print("\t- type: {}".format(type(cont)))
-        print("\t- content: {}".format(cont))
+        print("\t- content: {}".format(type(cont)))
         print("\t- utf8 content: {}".format(cont))
