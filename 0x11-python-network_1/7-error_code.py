@@ -9,7 +9,7 @@ import sys
 
 if __name__ == "__main__":
     hbtn = requests.get(sys.argv[1])
-    if hbtn >= 400:
+    if hbtn.status_code >= 400:
         print('Error code: {}'.format(hbtn.statu_code))
     else:
         print(hbtn.text)
