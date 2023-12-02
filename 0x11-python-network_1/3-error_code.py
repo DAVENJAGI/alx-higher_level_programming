@@ -13,5 +13,5 @@ if __name__ == "__main__":
             data = hbtn.read()
             print(data.decode('utf-8'))
 
-    except urllib.error.HTTPError as e:
-        print(f'Error Code: '.format(err.code)
+    except error.HTTPError as e:
+        print(f'Error Code: '.format(err.code))
