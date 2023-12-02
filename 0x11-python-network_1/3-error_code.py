@@ -3,16 +3,15 @@
 Python script that takes in a URL, sends a request to the URL
 and displays the body of the response
 """
-
-import urllib.error, urllib.request
+from urllib import error, request
 import sys
 
 
 if __name__ == "__main__":
     try:
-        with urllib.request.urlopen(sys.argv[1]) as hbtn:
+        with request.urlopen(sys.argv[1]) as hbtn:
             data = hbtn.read()
-            print(data)
+            print(data.decode('utf-8'))
 
     except urllib.error.HTTPError as e:
-        print(f'HTTPError: {e.code} - {e.reason}')
+        print(f'Error Code: '.format(err.code)
