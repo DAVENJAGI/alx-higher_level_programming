@@ -21,16 +21,14 @@ request(requestUrl, (error, response, body) => {
       request(characterUrl, (error, response, body) => {
         if (!error && response.statusCode === 200) {
           const character = JSON.parse(body);
-	  console.log('good job');
           list.push(character.name);
-	  characterFetched++;
+          characterFetched++;
 
-	  if (characterFetched === filmCharacter.length) {
-	  console.log(name);
-//            characters.forEach(name => console.log(name));
-	  } else {
-            console.error('Error getting character:', error);
+          if (characterFetched === filmCharacter.length) {
+            list.forEach(name => console.log(name));
           }
+        } else {
+          console.error('Error getting character:', error);
         }
       });
     });
