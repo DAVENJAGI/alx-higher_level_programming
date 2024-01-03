@@ -2,22 +2,24 @@
 
 const request = require('request');
 const url = process.argv[2];
-const id = process.argv[3]
-const requestUrl = `${url}/${id}`;
+const id = 18;
+// const requestUrl = `${url}/${id}`;
 
-request(requestUrl, (error, response, body) => {
+request(url, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
-  } else if (response.statusCode !== 200) {
-    console.error('Request failed with code:', response.statusCode);
-    return;
+  } else {
+    const data = JSON.parse(body).results;
+
+    let count = 0;
+    for (const film in data) {
+      const characters = data[film].characters;
+      for (const film in characters) {
+        if (characters[film].includes(id)) {
+          count++;
+        }
+      }
+    }
+    console.log(count);
   }
-    const data = JSON.parse(body);
-    
-//    for (const movie of data.results) {
-//    if (movie.characters.includes(id)
-//	    movie++;
-    
-    console.log(data.characters("18"));
-//  }
 });
