@@ -2,17 +2,22 @@
 
 const request = require('request');
 const url = process.argv[2];
-// const requestUrl = `${url}/${id}`;
+const id = process.argv[3]
+const requestUrl = `${url}/${id}`;
 
-request(url, (error, response, body) => {
+request(requestUrl, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
   } else if (response.statusCode !== 200) {
     console.error('Request failed with code:', response.statusCode);
-  } else {
-    const data = JSON.parse(body);
-    if (data.id === 18) {
-    console.log(sum(data.id));
-    }
+    return;
   }
+    const data = JSON.parse(body);
+    
+//    for (const movie of data.results) {
+//    if (movie.characters.includes(id)
+//	    movie++;
+    
+    console.log(data.characters("18"));
+//  }
 });
