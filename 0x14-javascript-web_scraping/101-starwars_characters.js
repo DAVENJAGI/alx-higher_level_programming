@@ -14,17 +14,17 @@ request(requestUrl, (error, response, body) => {
   } else {
     const data = JSON.parse(body);
     const filmCharacter = data.characters;
-    const order = [];
+    const characters = [];
     let characterFetched = 0;
 
     filmCharacter.forEach(characterUrl => {
       request(characterUrl, (error, response, body) => {
         if (!error && response.statusCode === 200) {
           const character = JSON.parse(body);
-          character.push(character.name);
+          characters.push(character.name);
 	  characterFetched++;
-	  if (characterFetched === characterUrl.length) {
-            character.forEach(name => console.log(name));
+	  if (characterFetched === filmCharacter.length) {
+            characters.forEach(name => console.log(name));
           } else {
             console.error('Error getting character:', error);
           }
