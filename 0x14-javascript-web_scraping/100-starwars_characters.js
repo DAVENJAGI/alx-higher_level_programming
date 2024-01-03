@@ -6,7 +6,7 @@ const id = process.argv[2];
 const requestUrl = `${url}/${id}`;
 // const characterUrl = 'https://swapi-api.alx-tools.com/api/films/`${id}`/characters/people';
 
-request(requestUrl, (error, response, body) => {
+request(requestUrl, function (error, response, body) {
   if (!error) {
     const characters = JSON.parse(body).characters;
     printCharacters(characters, 0);
